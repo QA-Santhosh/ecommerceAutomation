@@ -1,0 +1,56 @@
+public void getProductNameAndPriceSorted(String filePath, String sheetName, String columnName) {
+    int minPrice = Integer.parseInt(ConfigReader.getProperty("minPrice"));
+    int maxPrice = Integer.parseInt(ConfigReader.getProperty("maxPrice"));
+
+    List<String> topBrands = ExcelUtils.getColumnValues(filePath, sheetName, columnName);
+
+    test.log(Status.INFO, "Scanning headphones between ₹" + minPrice + " – ₹" + maxPrice
+            + " and filtering top brands from sheet: " + topBrands);
+
+    List<Map<String, String>> matchedProducts = new ArrayList<>();
+
+    try {
+        int totalProducts = Math.min(productName.size(), productPrice.size());
+
+        for (int i = 0; i < totalProducts; i++) {
+            String nameOfProduct = productName.get(i).getText().trim();
+            String priceOfProduct = productPrice.get(i).getText().trim();
+
+            if (nameOfProduct.isEmpty()) {
+                test.log(Status.WARNING, "Skipping product due to missing name at index: " + i);
+                continue;
+            }
+
+            // Clean the price string to keep only digits
+            String numericPrice = priceOfProduct.replaceAll("[^0-9]", "");
+
+            if (numericPrice.isEmpty()) {
+                test.log(Status.WARNING, "Skipping product due to missing or invalid price for: " + nameOfProduct);
+                continue;
+            }
+
+            int price = Integer.parseInt(numericPrice);
+            String matchedBrand = extractBrand(nameOfProduct, new ArrayList<>(topBrands));
+
+            if (!matchedBrand.isEmpty() && price >= minPrice && price <= maxPrice) {
+                Map<String, String> product = new HashMap<>();
+                product.put("brand", matchedBrand);
+                product.put("name", nameOfProduct);
+                product.put("price", "₹" + price); // You can format price as needed
+                matchedProducts.add(product);
+            }
+        }
+
+        matchedProducts.sort(Comparator.comparingInt(p -> topBrands.indexOf(p.get("brand"))));
+
+        for (Map<String, String> p : matchedProducts) {
+            String logMsg = p.get("brand") + " --> " + p.get("price");
+            System.out.println(logMsg);
+            test.log(Status.INFO, logMsg);
+        }
+
+    } catch (Exception e) {
+        test.log(Status.FAIL, "Error while processing product list: " + e.getMessage());
+        e.printStackTrace();
+    }
+}
