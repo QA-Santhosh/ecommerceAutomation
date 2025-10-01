@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SnapdealAutomationSuite]">
+  <parameter name="baseURL" value="https://www.snapdeal.com/"/>
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="HeadphoneTests(failed)">
+    <classes>
+      <class name="tests.HeadphoneTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="endReport"/>
+          <include name="setUp"/>
+          <include name="startReport"/>
+          <include name="getHeadphoneByPriceAndBrand"/>
+        </methods>
+      </class> <!-- tests.HeadphoneTest -->
+    </classes>
+  </test> <!-- HeadphoneTests(failed) -->
+</suite> <!-- Failed suite [SnapdealAutomationSuite] -->

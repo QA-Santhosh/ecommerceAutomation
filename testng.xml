@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SnapdealAutomationSuite" verbose="1" parallel="false">
+
+    <!-- Global parameters -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="baseURL" value="https://www.snapdeal.com/"/>
+
+    <!-- Test definition -->
+    <test name="HeadphoneTests">
+        <classes>
+            <!-- Fully qualified class name -->
+            <class name="tests.HeadphoneTest"/>
+        </classes>
+    </test>
+
+</suite>

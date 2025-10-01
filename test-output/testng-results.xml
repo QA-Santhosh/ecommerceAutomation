@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-01T09:03:55 IST" name="SnapdealAutomationSuite" finished-at="2025-10-01T09:04:10 IST" duration-ms="14301">
+    <groups>
+    </groups>
+    <test started-at="2025-10-01T09:03:55 IST" name="HeadphoneTests" finished-at="2025-10-01T09:04:10 IST" duration-ms="14301">
+      <class name="tests.HeadphoneTest">
+        <test-method is-config="true" signature="startReport()[pri:0, instance:tests.HeadphoneTest@4d02f94e]" started-at="2025-10-01T09:03:55 IST" name="startReport" finished-at="2025-10-01T09:03:55 IST" duration-ms="418" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReport -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:tests.HeadphoneTest@4d02f94e]" started-at="2025-10-01T09:03:55 IST" name="setUp" finished-at="2025-10-01T09:04:01 IST" duration-ms="6159" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void tests.HeadphoneTest.getHeadphoneByPriceAndBrand()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="getHeadphoneByPriceAndBrand()[pri:0, instance:tests.HeadphoneTest@4d02f94e]" started-at="2025-10-01T09:04:01 IST" name="getHeadphoneByPriceAndBrand" finished-at="2025-10-01T09:04:09 IST" duration-ms="7771" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getHeadphoneByPriceAndBrand -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.HeadphoneTest@4d02f94e]" started-at="2025-10-01T09:04:09 IST" name="tearDown" finished-at="2025-10-01T09:04:10 IST" duration-ms="315" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getHeadphoneByPriceAndBrand status=SUCCESS method=HeadphoneTest.getHeadphoneByPriceAndBrand()[pri:0, instance:tests.HeadphoneTest@4d02f94e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="endReport()[pri:0, instance:tests.HeadphoneTest@4d02f94e]" started-at="2025-10-01T09:04:10 IST" name="endReport" finished-at="2025-10-01T09:04:10 IST" duration-ms="584" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- tests.HeadphoneTest -->
+    </test> <!-- HeadphoneTests -->
+  </suite> <!-- SnapdealAutomationSuite -->
+</testng-results>
